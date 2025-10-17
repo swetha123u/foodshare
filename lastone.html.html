@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodShare - Reduce Food Waste</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #d4e4f7;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            border-radius: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 600;
+            color: #4a6fa5;
+        }
+        .header p {
+            font-size: 1.3em;
+            font-weight: 300;
+            color: #6b7280;
+        }
+        .home-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        .🏠 img {
+            width: 35px;
+            transition: transform 0.3s ease;
+        }
+        .home-icon img:hover {
+            transform: scale(1.2);
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #e6ecf4;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            z-index: 100;
+        }
+        .dropdown a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            color: #4a6fa5;
+            font-weight: 400;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown a:hover {
+            background-color: #d4e4f7;
+            border-radius: 5px;
+        }
+        .content {
+            display: none;
+            padding: 25px;
+            background-color: #e6ecf4;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .content.active {
+            display: block;
+        }
+        .signin-options, .menu, .payment, .feedback-form {
+            display: none;
+            padding: 25px;
+            background-color: #e6ecf4;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .signin-options.active, .menu.active, .payment.active, .feedback-form.active {
+            display: block;
+        }
+        .menu table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .menu th, .menu td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #d4e4f7;
+        }
+        .menu th {
+            background-color: #4a6fa5;
+            color: #fff;
+            font-weight: 600;
+        }
+        .menu td {
+            font-weight: 300;
+        }
+        .menu input[type="number"] {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #d4e4f7;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4a6fa5;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #3b5a8c;
+        }
+        input, textarea {
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #d4e4f7;
+            border-radius: 5px;
+            width: calc(100% - 24px);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+        }
+        h2, h3 {
+            color: #4a6fa5;
+            font-weight: 600;
+        }
+        .content p, .content li {
+            font-weight: 300;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Reduce Food Waste — Connect Orders, Predictions, and Your Community</h1>
+            <p>Feed the Need</p>
+            <p>FoodShare helps restaurants, hostels, and kitchens predict demand, reduce overproduction, and enable community sharing of surplus food — saving costs and promoting sustainability.</p>
+            <div class="home-icon">
+                <img src="https://via.placeholder.com/35?text=🏠" alt="Home Icon" onclick="toggleDropdown()">
+            </div>
+            <div class="dropdown" id="dropdown">
+                <a href="#" onclick="showContent('about')">About Us</a>
+                <a href="#" onclick="showContent('signin')">Sign In / Log In</a>
+                <a href="#" onclick="showContent('contact')">Contact Us</a>
+                <a href="#" onclick="showContent('feedback')">Customer Feedback</a>
+            </div>
+        </div>
+
+        <div class="content" id="about">
+            <h2>About Us</h2>
+            <p>Food wastage is a major challenge in restaurants, hostels, and community kitchens due to unpredictable demand and poor inventory tracking. Traditional food ordering systems only focus on order placement but fail to address overproduction, unsold items, and community needs. There is a need for a smart food ordering system that not only predicts demand but also minimizes waste by enabling community sharing of surplus food.</p>
+            <ul>
+                <li><strong>Predictive Inventory Management:</strong> Uses historical order data to forecast demand and guide food preparation.</li>
+                <li><strong>Community Sharing Module:</strong> Surplus food can be shared/donated to nearby users, NGOs, or communities in real-time.</li>
+                <li><strong>Zero-Waste Goal:</strong> By aligning preparation with demand and redistributing leftovers, the system minimizes food wastage.</li>
+                <li><strong>Integration of Ordering & Sustainability:</strong> Combines regular customer food ordering with waste-reduction initiatives in one platform.</li>
+                <li>First system to merge food ordering + prediction + waste reduction in one platform.</li>
+                <li>Introduces community sharing of surplus food.</li>
+                <li>Helps restaurants save costs & promotes sustainability.</li>
+                <li>Provides analytics dashboard for admins to track waste reduction progress.</li>
+            </ul>
+        </div>
+
+        <div class="content signin-options" id="signin">
+            <h2>Sign In</h2>
+            <button onclick="showSignIn('customer')">Customer</button>
+            <button onclick="showSignIn('restaurant')">Restaurant</button>
+            <div id="customer-signin" style="display: none;">
+                <h3>Customer Sign In</h3>
+                <input type="text" id="customer-name" placeholder="Name">
+                <input type="text" id="customer-contact" placeholder="Phone Number or Email ID">
+                <button onclick="customerSignIn()">Sign In</button>
+            </div>
+            <div id="restaurant-signin" style="display: none;">
+                <h3>Restaurant Sign In</h3>
+                <input type="text" id="restaurant-name" placeholder="Restaurant Name">
+                <input type="text" id="restaurant-location" placeholder="Location">
+                <input type="text" id="restaurant-contact" placeholder="Contact Details">
+                <button onclick="restaurantSignIn()">Sign In</button>
+            </div>
+        </div>
+
+        <div class="content menu" id="menu">
+            <h2>Food Menu</h2>
+            <table>
+                <tr><th>Item</th><th>Price</th><th>Quantity</th></tr>
+                <tr><td>Margherita Pizza</td><td>₹800</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Pasta Alfredo</td><td>₹650</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Caesar Salad</td><td>₹500</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Grilled Chicken</td><td>₹950</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Veggie Burger</td><td>₹550</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Fish Tacos</td><td>₹700</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Beef Burrito</td><td>₹800</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Chicken Wrap</td><td>₹650</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Mushroom Risotto</td><td>₹850</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>BBQ Ribs</td><td>₹1200</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Shrimp Fried Rice</td><td>₹950</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Veggie Stir Fry</td><td>₹700</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Chicken Curry</td><td>₹800</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Pork Dumplings</td><td>₹550</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Cheese Platter</td><td>₹1100</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Garlic Bread</td><td>₹400</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Tomato Soup</td><td>₹500</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Chocolate Cake</td><td>₹650</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Ice Cream Sundae</td><td>₹500</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Fruit Salad</td><td>₹400</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Paneer Tikka</td><td>₹700</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Butter Chicken</td><td>₹950</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Naan Bread</td><td>₹250</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Falafel Wrap</td><td>₹650</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Hummus Plate</td><td>₹550</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Spring Rolls</td><td>₹500</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Pad Thai</td><td>₹800</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Sushi Platter</td><td>₹1200</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Miso Soup</td><td>₹400</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+                <tr><td>Tiramisu</td><td>₹650</td><td><input type="number" min="0" onchange="calculateTotal()"></td></tr>
+            </table>
+            <h3>Total Cost: ₹<span id="total-cost">0</span></h3>
+            <button onclick="showPayment()">Proceed to Pay</button>
+        </div>
+
+        <div class="content payment" id="payment">
+            <h2>Payment Options</h2>
+            <button onclick="confirmOrder()">Credit Card</button>
+            <button onclick="confirmOrder()">UPI</button>
+            <button onclick="confirmOrder()">Cash on Delivery</button>
+        </div>
+
+        <div class="content" id="restaurant-data" style="display: none;">
+            <h2>Restaurant Dashboard</h2>
+            <p><strong>Reason for Food Waste:</strong> Overproduction due to inaccurate demand forecasting.</p>
+            <p><strong>Food Waste Count:</strong> 50kg this week.</p>
+            <p><strong>Other Details:</strong> High wastage in perishable items like vegetables and dairy.</p>
+            <p>You will be contacted soon for further waste reduction strategies.</p>
+        </div>
+
+        <div class="content" id="contact">
+            <h2>Contact Us</h2>
+            <p>Landline: +91-800-123-4567</p>
+            <p>Mobile: +91-987-654-3210</p>
+            <p>Customer Care Email: support@foodshare.com</p>
+        </div>
+
+        <div class="content feedback-form" id="feedback">
+            <h2>Customer Feedback</h2>
+            <textarea placeholder="Your feedback about this initiative"></textarea>
+            <textarea placeholder="Any further useful ideas"></textarea>
+            <button onclick="submitFeedback()">Submit Feedback</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function showContent(contentId) {
+            document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+            document.getElementById(contentId).classList.add('active');
+            document.getElementById('dropdown').style.display = 'none';
+        }
+
+        function showSignIn(type) {
+            document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+            document.getElementById('signin').classList.add('active');
+            document.getElementById('customer-signin').style.display = type === 'customer' ? 'block' : 'none';
+            document.getElementById('restaurant-signin').style.display = type === 'restaurant' ? 'block' : 'none';
+        }
+
+        function customerSignIn() {
+            const name = document.getElementById('customer-name').value;
+            const contact = document.getElementById('customer-contact').value;
+            if (name && contact) {
+                document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+                document.getElementById('menu').classList.add('active');
+            } else {
+                alert('Please fill in all fields');
+            }
+        }
+
+        function restaurantSignIn() {
+            const name = document.getElementById('restaurant-name').value;
+            const location = document.getElementById('restaurant-location').value;
+            const contact = document.getElementById('restaurant-contact').value;
+            if (name && location && contact) {
+                document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+                document.getElementById('restaurant-data').classList.add('active');
+            } else {
+                alert('Please fill in all fields');
+            }
+        }
+
+        function calculateTotal() {
+            const inputs = document.querySelectorAll('.menu input[type="number"]');
+            const prices = [800, 650, 500, 950, 550, 700, 800, 650, 850, 1200, 950, 700, 800, 550, 1100, 400, 500, 650, 500, 400, 700, 950, 250, 650, 550, 500, 800, 1200, 400, 650];
+            let total = 0;
+            inputs.forEach((input, index) => {
+                total += (input.value || 0) * prices[index];
+            });
+            document.getElementById('total-cost').textContent = total;
+        }
+
+        function showPayment() {
+            const total = document.getElementById('total-cost').textContent;
+            if (total > 0) {
+                document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+                document.getElementById('payment').classList.add('active');
+            } else {
+                alert('Please select at least one item');
+            }
+        }
+
+        function confirmOrder() {
+            alert('Order Confirmed! Estimated Delivery Time: 30 minutes. Thanks for ordering!');
+            document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+        }
+
+        function submitFeedback() {
+            alert('Thank you for your feedback!');
+            document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+        }
+    </script>
+</body>
+</html>
